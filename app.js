@@ -7,10 +7,10 @@ function error(title, content) {
     error.classList.add('show');
 }
 
-let wserv = new WebSocket('ws://localhost:3002')
+let wserv = new WebSocket('ws://dv8.synology.me:12341')
 
 wserv.onclose = function () {
-    wserv = new WebSocket('ws://localhost:3002')
+    wserv = new WebSocket('ws://dv8.synology.me:12341')
 }
 
 onload = function () {
