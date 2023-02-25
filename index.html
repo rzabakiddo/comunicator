@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <title>Piwo</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="app.js">
+        const params = new URL(location.href).searchParams;
+        const data = params.get('dataPush');
+        if(data.indexOf("|")) {
+            let split = data.split("|");
+            localStorage.setItem("piwo_username",split[0])
+            localStorage.setItem("piwo_username",split[1])
+            location.href="/";
+        }
+    </script>
     <script src="aes.js"></script>
 </head>
 <body>
